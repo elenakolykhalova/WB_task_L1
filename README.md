@@ -79,6 +79,7 @@
 8. В чем разница make и new?
 9. Сколько существует способов задать переменную типа slice или map?
 10. Что выведет данная программа и почему?
+```shell
 	func update(p *int) { 
 		b := 2
 		p = &b
@@ -90,6 +91,7 @@
 		)
 	fmt.Println(*p) update(p) fmt.Println(*p)
 	}
+```
 11. Что выведет данная программа и почему?
 	func main() {
 		wg := sync.WaitGroup{} 
