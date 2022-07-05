@@ -22,8 +22,10 @@ func newPoint(a, b float64) Point{
 }
 
 func main() {
-	var a, b float64
-	fmt.Scan(&a, &b)
-	c := newPoint(a, b)
-	fmt.Printf("Расстояние между X и Y %0.2f\n", math.Abs(c.x - c.y))
+	a := newPoint(1, 1)
+	b := newPoint(2, 2)
+
+	res := math.Sqrt(math.Pow(a.x - b.x, 2) + math.Pow(a.y - b.y, 2))
+
+	fmt.Printf("Расстояние между X и Y %0.2f\n", res)
 }
