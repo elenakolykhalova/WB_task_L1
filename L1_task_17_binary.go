@@ -25,7 +25,7 @@ func main() {
 	fmt.Println("Найти число -", num)
 	
 	//бинарный поиск встроенными методами языка
-	b := sort.SearchInts(slice, num)
+	b := sort.SearchInts(slice, num) //возвращает индекс найденного числа
 	if b == len(slice) {
 		fmt.Println("Число не найдено")
 	} else {

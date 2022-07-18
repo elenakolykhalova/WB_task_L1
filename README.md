@@ -79,55 +79,69 @@
 8. В чем разница make и new?
 9. Сколько существует способов задать переменную типа slice или map?
 10. Что выведет данная программа и почему?
+	```shell
 	func update(p *int) { 
-		b := 2
-		p = &b
+	     b := 2
+	     p = &b
 	}
 	func main() { 
-		var (
-			a=1
-			p = &a 
-		)
-	fmt.Println(*p) update(p) fmt.Println(*p)
+	     var (
+		a=1
+		p = &a 
+   	     )
+	     fmt.Println(*p) 
+	     update(p) 
+	     fmt.Println(*p)
 	}
+	```
 11. Что выведет данная программа и почему?
+	```shell
 	func main() {
-		wg := sync.WaitGroup{} 
-		for i := 0; i < 5; i++ {
-			wg.Add(1)
-			go func(wg sync.WaitGroup, i int) {
-				fmt.Println(i)
-				wg.Done() 
-			}
-		(wg, i)
-		}
-		wg.Wait() fmt.Println("exit")
+	     wg := sync.WaitGroup{} 
+	     for i := 0; i < 5; i++ {
+		wg.Add(1)
+		go func(wg sync.WaitGroup, i int) {
+	  	     fmt.Println(i)
+	 	     wg.Done() 
+		}(wg, i)
+	     }
+	     wg.Wait() 
+	     fmt.Println("exit")
 	}
+	```
 12. Что выведет данная программа и почему?
+	```shell
 	func main() { 
-		n := 0
-		if true {
-			n := 1
-			n++ 
-		}
-		fmt.Println(n) 
+	     n := 0
+	     if true {
+		n := 1
+		n++ 
+	     }
+	     fmt.Println(n) 
 	}
+	```
 13. Что выведет данная программа и почему?
+	```shell
 	func someAction(v []int8, b int8) { 
-		v[0] = 100
-		v = append(v, b)
+	     v[0] = 100
+	     v = append(v, b)
 	}
 	func main() {
-		var a = []int8{1, 2, 3, 4, 5} 
-		someAction(a, 6) 
-		fmt.Println(a)
+	     var a = []int8{1, 2, 3, 4, 5} 
+	     someAction(a, 6) 
+	     fmt.Println(a)
 	}
+	```
 14. Что выведет данная программа и почему?
+	```shell
 	func main() {
-		slice := []string{"a", "a"}
-		func(slice []string) {
-			slice = append(slice, "a") slice[0] = "b"
-			slice[1] = "b" fmt.Print(slice)
-		}(slice)
-		fmt.Print(slice) 
+	     slice := []string{"a", "a"}
+	     func(slice []string) {
+		slice = append(slice, "a") 
+		slice[0] = "b"
+		slice[1] = "b" 
+		fmt.Print(slice)
+	     }(slice)
+	     fmt.Print(slice) 
 	}
+	```

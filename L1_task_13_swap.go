@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	a := 5
 	b := 67
 
